@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <!--
+    https://www.genbeta.com/desarrollo/plantillas-html5-en-java-con-thymeleaf
+    https://programmerclick.com/article/2371729968/
+    Basicos de Thymeleaf
+
+    Variables simples:
+
+        <input type="text" name="nombre" value="Pedro Perez" //html
+            th:value="${nombre}"                             //declaracion de variable Thymeleaf
+        />
+
+    bucles:
+
+        <tr
+
+            th:each="prod : ${productos}                    //declaracion de for Thymeleaf th:each="prod : ${productos}"
+                                                            //prod          es el indice
+                                                            //${productos}  sera el arreglo a iterar
+
+        ">
+            <td
+                th:text="${prod.id}                         //declaracion de texto Thymeleaf
+            ">
+                Código del producto
+            </td>
+            <td
+                th:text="${prod.nobre}                      //declaracion de texto Thymeleaf
+            ">
+                Nombre del producto
+            </td>
+        /tr>
+
+
+
+        a grandes rasgos los usados son
+        for
+            th:each="prod : ${productos}"
+
+        varaible
+            th:value="${nombre}"
+
+        texto
+            th:text="${prod.nobre}"
+
+        rutas
+            th:href="@{/jedi}"
+    -->
+
+    <p>esta es una vista realosada con un template engine </p>
+    <!-- th: debe ir antes de las propiedades  -->
+    <!-- enlaces dentro de @{ruta de acceso }-->
+    <a th:href="@{/jedi}">pagina2</a>
+
+    <!-- reciviendo una variable mediante th:text="${mensaje}" -->
+    <p th:text="${mensaje}"></p>
+
+    <!-- reciviendo un arreylist mendiante th:each="nombre: ${nombres}"-->
+    <ul th:each="nombre: ${nombres}">
+        <!-- utilisando lo que viene en la cada elemento   mediaten  th:text="${nombre}"-->
+        <li th:text="${nombre}"></li>
+    </ul>
+
+
+</body>
+</html>
